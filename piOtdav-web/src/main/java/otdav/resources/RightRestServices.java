@@ -36,9 +36,10 @@ public class RightRestServices {
 		return Response.status(Status.OK).entity("cccccc").build();
 	}
 	@POST
+	@Path("add")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response AjouterRight(Right right) {
-
+		right.setWorks(null);
 		if (metier.addRight(right) == true) {
 
 			return Response.status(Status.CREATED).entity("right added").build();

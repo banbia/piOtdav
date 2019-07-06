@@ -15,17 +15,19 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Null;
 
 @Entity
 @Table(name = "right", catalog = "pi_otdav")
 public class Right implements java.io.Serializable {
 	@Id
+	@Column(name = "idRight", unique = true, nullable = false)
 	private int idRight;
 	private String libele;
 	private String reference;
 	private String description;
 	@ManyToMany(mappedBy="rights")
-	private List<Work> works;
+	private List<Work> works ;
 	public Right() {
 	}
 
@@ -33,20 +35,13 @@ public class Right implements java.io.Serializable {
 		this.idRight = idRight;
 	}
 
-	public Right(int idRight,String reference, String libele,String description, List<Work> works) {
-		this.idRight = idRight;
-		this.reference = reference;
-		this.libele = libele;
-		this.description = description;
-		this.works = works;
-	}
 	public Right(int idRight,String reference, String libele,String description) {
 		this.idRight = idRight;
 		this.reference = reference;
 		this.libele = libele;
 		this.description = description;
 	}
-	@Column(name = "idRight", unique = true, nullable = false)
+	
 	public int getIdRight() {
 		return this.idRight;
 	}

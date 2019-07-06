@@ -15,14 +15,14 @@ public class RightService implements IRightService{
 	private List<Right> rights;
 	@PersistenceContext(unitName = "otdav-ejb")
 	EntityManager em;
-	public RightService() {
-		rights=new ArrayList<Right>();
-		rights.add(new Right(1,"ref1","Libelle1", "Lorem ispum sit amet dolor"));
-		rights.add(new Right(2,"ref2","Libelle2", "Lorem ispum sit amet dolor"));
-		rights.add(new Right(3,"ref3","Libelle3", "Lorem ispum sit amet dolor"));
-		rights.add(new Right(4,"ref4","Libelle4", "Lorem ispum sit amet dolor"));
-		rights.add(new Right(5,"ref5","Libelle5", "Lorem ispum sit amet dolor"));
-	}
+//	public RightService() {
+//		rights=new ArrayList<Right>();
+//		rights.add(new Right(1,"ref1","Libelle1", "Lorem ispum sit amet dolor"));
+//		rights.add(new Right(2,"ref2","Libelle2", "Lorem ispum sit amet dolor"));
+//		rights.add(new Right(3,"ref3","Libelle3", "Lorem ispum sit amet dolor"));
+//		rights.add(new Right(4,"ref4","Libelle4", "Lorem ispum sit amet dolor"));
+//		rights.add(new Right(5,"ref5","Libelle5", "Lorem ispum sit amet dolor"));
+//	}
 
 	public List<Right> getRights() {
 		return rights;
@@ -41,7 +41,15 @@ public class RightService implements IRightService{
 	}
 	
 	public boolean addRight(Right right){
-		 em.persist(right);	
+		  em.persist(right);
+//		String query = "insert into right (idRight,description,libele,reference) values(?,?,?,?,?)";
+//
+//		em.createNativeQuery(query)
+//			.setParameter(0, right.getIdRight())
+//			.setParameter(1, right.getDescription())
+//			.setParameter(2, right.getLibele())
+//		   .setParameter(3, right.getReference())
+//		   .executeUpdate();
 		 return true;
 	}
 	public void updateRight(Right right){
