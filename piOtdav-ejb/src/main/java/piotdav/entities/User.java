@@ -9,6 +9,8 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -28,6 +30,9 @@ public class User implements java.io.Serializable {
 	private int idUser;
 	@ManyToOne
 	private Resignation resignation;
+	@ManyToOne
+	@JoinColumn(name = "categoryUser", nullable = false)
+	private CategoryUser categoryUser;
 	
 	private String lastName;
 	private String firstName;
@@ -78,13 +83,13 @@ public class User implements java.io.Serializable {
 		this.idUser = idUser;
 	}
 
-	public User(int idUser, Resignation resignation, String lastName, String firstName, String cin, Date dateDelivrance,
+	public User( String lastName, String firstName, String cin, Date dateDelivrance,
 			String adresse, String ville, String codePostal, String civilite, String email, Date dateNaissance,
 			Integer identifiantUnique, String lieuNaissance, String nationalite, String raisonSocial, Integer numChild,
 			Integer numEnregistrements, String photo, String fax, String tel, String rib, String sexe, Date etatcivil,
 			Date dateEnregistrement, Integer typeEnregistrement, Integer typePerson, String login, String password,
 			Integer role, Integer state) {
-		this.idUser = idUser;
+		
 		this.resignation = resignation;
 		this.lastName = lastName;
 		this.firstName = firstName;
@@ -117,7 +122,12 @@ public class User implements java.io.Serializable {
 		this.state = state;
 	}
 
+	public User( String lastName, String firstName) {
 	
+		this.lastName = lastName;
+		this.firstName = firstName;
+		
+	}
 	public int getIdUser() {
 		return this.idUser;
 	}

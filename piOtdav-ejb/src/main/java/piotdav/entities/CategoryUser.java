@@ -7,6 +7,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -18,10 +20,16 @@ public class CategoryUser implements java.io.Serializable  {
 	private int idCategory;
 	private String libele;
 	@OneToMany(mappedBy = "categoryUser")
-	private Set<Fees> fees;
+	private Set<User> user;
 	
 	public CategoryUser() {		
 		
+	}
+	public Set<User> getUser() {
+		return user;
+	}
+	public void setUser(Set<User> user) {
+		this.user = user;
 	}
 	public CategoryUser(int idCategoryUser) {		
 		this.idCategory = idCategoryUser;
@@ -33,7 +41,7 @@ public class CategoryUser implements java.io.Serializable  {
 	}
 
 	@Id
-	@Column(name = "idCategoryUser", unique = true, nullable = false)
+	@GeneratedValue (strategy = GenerationType.AUTO )
 	public int getIdCategoryUser() {
 		return idCategory;
 	}
@@ -46,6 +54,8 @@ public class CategoryUser implements java.io.Serializable  {
 	public void setLibele(String libele) {
 		this.libele = libele;
 	}
+	
+	
 	
 	
 }
