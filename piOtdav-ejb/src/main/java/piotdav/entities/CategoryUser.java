@@ -7,21 +7,32 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import piotdav.entities.User;
+
 @Entity
 @Table(name = "categoryUser", catalog = "pi_otdav")
 public class CategoryUser implements java.io.Serializable  {
-
+	@Id
+	@GeneratedValue (strategy = GenerationType.AUTO )
 	private int idCategory;
 	private String libele;
-	@OneToMany(mappedBy = "categoryUser")
-	private Set<Fees> fees;
+	@OneToMany(mappedBy = "category")
+	private Set<User> users ;
 	
 	public CategoryUser() {		
 		
+	}
+	public Set<User> getUser() {
+		return users;
+	}
+	public void setUser(Set<User> user) {
+		this.users = user;
 	}
 	public CategoryUser(int idCategoryUser) {		
 		this.idCategory = idCategoryUser;
@@ -32,8 +43,7 @@ public class CategoryUser implements java.io.Serializable  {
 		this.libele = libele;
 	}
 
-	@Id
-	@Column(name = "idCategoryUser", unique = true, nullable = false)
+	
 	public int getIdCategoryUser() {
 		return idCategory;
 	}
@@ -46,6 +56,7 @@ public class CategoryUser implements java.io.Serializable  {
 	public void setLibele(String libele) {
 		this.libele = libele;
 	}
+	
 	
 	
 }
