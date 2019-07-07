@@ -1,3 +1,8 @@
-otdav\utils\RestActivator.class
 otdav\resources\RightRestServices.class
+<<<<<<< HEAD
 otdav\resources\UserRestServices.class
+=======
+otdav\resources\CategoryUserServices.class
+otdav\resources\FeesRestServices.class
+otdav\utils\RestActivator.class
+>>>>>>> 781ad0a90899e4cb466f75bbd8d4e54790d46de1
