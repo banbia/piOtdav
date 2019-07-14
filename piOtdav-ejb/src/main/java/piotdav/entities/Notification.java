@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,8 +20,11 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "notification", catalog = "pi_otdav")
 public class Notification implements java.io.Serializable {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idNotification;
+	@ManyToOne
+	@JoinColumn(name = "idUser", nullable = false)
 	private User user;
 	private Date dateNotification;
 	private String etat;
@@ -28,12 +33,17 @@ public class Notification implements java.io.Serializable {
 
 	public Notification() {
 	}
-
+	public Notification( Integer typeNotification,String description,int idUser) {
+		this.typeNotification = typeNotification;
+		this.description = description;
+	}
 	public Notification(int idNotification, User user) {
 		this.idNotification = idNotification;
 		this.user = user;
 	}
-
+	public Notification(int idNotification) {
+		this.idNotification = idNotification;
+	}
 	public Notification(int idNotification, User user, Date dateNotification, String etat, Integer typeNotification,
 			String description) {
 		this.idNotification = idNotification;
@@ -44,8 +54,6 @@ public class Notification implements java.io.Serializable {
 		this.description = description;
 	}
 
-	@Id
-
 	@Column(name = "idNotification", unique = true, nullable = false)
 	public int getIdNotification() {
 		return this.idNotification;
@@ -55,8 +63,7 @@ public class Notification implements java.io.Serializable {
 		this.idNotification = idNotification;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "idUser", nullable = false)
+	
 	public User getUser() {
 		return this.user;
 	}

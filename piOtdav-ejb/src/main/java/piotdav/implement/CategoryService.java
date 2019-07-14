@@ -2,7 +2,7 @@ package piotdav.implement;
 
 import java.util.List;
 
-import javax.ejb.Remove;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -10,47 +10,53 @@ import piotdav.entities.Category;
 import piotdav.entities.Work;
 import piotdav.services.ICategoryService;
 
-
+@Stateless
 public class CategoryService implements ICategoryService{
 	
 	@PersistenceContext(unitName = "otdav-ejb")
 	EntityManager em;
 
 	@Override
-	public void addCategory(Category category) {
+	public Boolean addCategory(Category category) {
 		// TODO Auto-generated method stub
 		
+		try {
+			if(category!=null)
+				em.persist(category);
+				return true;
+		}catch(Exception e) {
+			return false;
+		}
+		
+	}
+
+	@Override
+	public int removeCategory(int idCategory) {
+		// TODO Auto-generated method stub
+		Category category = em.find(Category.class, idCategory);
+		try {
+			
+			em.remove(category);
+			return 1 ;
+			}
+			catch (Exception e) {
+			return -1;
+
+			}
+		
+	}
+
+	@Override
+	public Boolean updateCategory(Category NewCategory) {
+		// TODO Auto-generated method stub
+		
+		Category category = em.find(Category.class, NewCategory.getIdCategory());	
+		if(category != null) {
+		category.setLibele(NewCategory.getLibele());
 		em.persist(category);
-		
-	}
-
-	@Override
-	public String removeCategory(int idCategory) {
-		// TODO Auto-generated method stub
-		if(em.find(Category.class, idCategory)== null) {
-			
-			return "idCategory ="+idCategory+"d'ont existe";
-		}else {
-			em.remove(em.find(Category.class, idCategory));
-			return "Delete succeful";
+		return true;
 		}
-		
-	}
-
-	@Override
-	public String updateCategory(Category NewCategory) {
-		// TODO Auto-generated method stub
-		
-		if (em.find(Category.class, NewCategory.getIdCategory())==null)
-		{
-	return "Category don't existe" +NewCategory.getIdCategory();
-		}
-		else{
-			Category category = em.find(Category.class, NewCategory.getIdCategory());
-			category.setLibele(NewCategory.getLibele());
-			
-		}
-		return "Update successful";
+		return false;
 	}
 
 	@Override
@@ -66,10 +72,10 @@ public class CategoryService implements ICategoryService{
 	@Override
 	public List<Category> findAllCategory() {
 		// TODO Auto-generated method stub
-		System.out.println("In findAlloeuvrs : "); 
+		
 		List<Category> categories =
-				em.createQuery("from Category", Category.class).getResultList();
-		System.out.println("Out of findAllCategory : "); 
+				em.createQuery("select c from Category c", Category.class).getResultList();
+		 
 		return categories;
 		
 	}

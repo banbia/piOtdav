@@ -6,13 +6,14 @@ import javax.ejb.Local;
 import javax.ejb.Remote;
 
 import piotdav.entities.Right;
+import piotdav.entities.Work;
 
 @Local
 public interface IRightService {
-	public List<Right> getRights();
-	public void setRights(List<Right> rights);
+	public List<Right> getRightsByWork(int workId);
 	public Right getRightByReference(String reference);
 	public boolean addRight(Right right);
-	public void updateRight(Right right);
-	public void deleteRight(Right right);
+	public boolean updateRight(Right right);
+	public boolean deleteRight(int idRiht);
+	public boolean linkRightsToWork(int idRight, int idWork);
 }

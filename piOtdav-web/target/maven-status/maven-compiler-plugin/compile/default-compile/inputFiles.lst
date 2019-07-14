@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 C:\Users\safra\workspace\piOtdav\piOtdav-web\src\main\java\otdav\utils\RestActivator.java
 C:\Users\safra\workspace\piOtdav\piOtdav-web\src\main\java\piotdav\services\CategorydepositService.java
 C:\Users\safra\workspace\piOtdav\piOtdav-web\src\main\java\otdav\resources\RightRestServices.java
 C:\Users\safra\workspace\piOtdav\piOtdav-web\src\main\java\otdav\resources\DepositWebService.java
+=======
+<<<<<<< HEAD
+C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-web\src\main\java\otdav\utils\RestActivator.java
+C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-web\src\main\java\otdav\resources\RightRestServices.java
+C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-web\src\main\java\otdav\resources\CategoryRestServices.java
+C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-web\src\main\java\otdav\resources\WorkRestServices.java
+=======
+C:\Users\Banbia\workspace\piOtdav\piOtdav-web\src\main\java\otdav\resources\NotificationRestServices.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-web\src\main\java\otdav\utils\RestActivator.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-web\src\main\java\otdav\resources\RightRestServices.java
+>>>>>>> a54cbb737cd789d71219446139a57902cef8a157
+>>>>>>> 19a200212f2aeb29b37f5a21edca825364b1ee2d
