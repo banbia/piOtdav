@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: Safraw
 Build-Jdk: 1.8.0_201
+=======
+Built-By: Banbia
+Build-Jdk: 1.8.0_111
+>>>>>>> 4e852b086a0aedbe338d9661e1f71650fbcf3210
 Created-By: Maven Integration for Eclipse
 
