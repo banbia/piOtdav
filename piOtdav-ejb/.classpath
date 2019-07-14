@@ -19,6 +19,15 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+<<<<<<< HEAD
+=======
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+>>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="test" value="true"/>
@@ -29,11 +38,16 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+=======
+	<classpathentry kind="lib" path="F:/OTDAV/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47.jar">
+>>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -5,10 +5,14 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -32,13 +36,13 @@ import piotdav.entities.Work;
 @Table(name = "user", catalog = "pi_otdav")
 public class User implements java.io.Serializable {
 	@Id
+	@GeneratedValue (strategy = GenerationType.AUTO )
 	@Column(name = "idUser", unique = true, nullable = false)
 	private int idUser;
-	@ManyToOne
-	private Resignation resignation;
+
 	
 	@ManyToOne
-	@JoinColumn(name = "categoryUser", nullable = false)
+	@JoinColumn(name = "categoryUser", nullable = true)
 	private CategoryUser category;
 	
 	public CategoryUser getCategory() {
@@ -78,19 +82,25 @@ public class User implements java.io.Serializable {
 	private String password;
 	private Integer role;
 	private Integer state;
-	@OneToMany(mappedBy = "user")
+	@ManyToOne
+	private Resignation resignation;
+	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
 	private Set<Deposit> deposits;
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
 	private Set<Notification> notifications ;
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
 	private Set<Work> works ;
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
 	private Set<Division> divisions ;
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
 	private Set<Document> documents ;
+<<<<<<< HEAD
 	@OneToMany(mappedBy = "user")
 	private Set<Resignation> resignations;
 	
+=======
+
+>>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
 
 	public User() {
 	}
@@ -99,14 +109,14 @@ public class User implements java.io.Serializable {
 		this.idUser = idUser;
 	}
 
-	public User(int idUser, Resignation resignation, String lastName, String firstName, String cin, Date dateDelivrance,
+	public User( String lastName, String firstName, String cin, Date dateDelivrance,
 			String adresse, String ville, String codePostal, String civilite, String email, Date dateNaissance,
 			Integer identifiantUnique, String lieuNaissance, String nationalite, String raisonSocial, Integer numChild,
 			Integer numEnregistrements, String photo, String fax, String tel, String rib, String sexe, Date etatcivil,
 			Date dateEnregistrement, Integer typeEnregistrement, Integer typePerson, String login, String password,
 			Integer role, Integer state) {
-		this.idUser = idUser;
-		this.resignation = resignation;
+		
+		
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.cin = cin;
@@ -138,7 +148,19 @@ public class User implements java.io.Serializable {
 		this.state = state;
 	}
 
+	public User( String lastName, String firstName) {
+		this.lastName = lastName;
+		this.firstName = firstName;
+		
+	}
 	
+	
+	public User(CategoryUser category, String lastName, String firstName) {
+		this.category = category;
+		this.lastName = lastName;
+		this.firstName = firstName;
+	}
+
 	public int getIdUser() {
 		return this.idUser;
 	}
@@ -467,11 +489,22 @@ public class User implements java.io.Serializable {
 	}
 
 	
-	public Set<Resignation> getResignations() {
-		return this.resignations;
+	
+
+	public CategoryUser getCategory() {
+		return category;
 	}
 
-	public void setResignations(Set<Resignation> resignations) {
-		this.resignations = resignations;
+	public void setCategory(CategoryUser category) {
+		this.category = category;
 	}
+
+	@Override
+	public String toString() {
+		return "User [idUser=" + idUser + ", lastName=" + lastName + ", firstName="
+				+ firstName + "]";
+	}
+
+
+	
 }

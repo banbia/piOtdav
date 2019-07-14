@@ -1,5 +1,6 @@
 package piotdav.entities;
 
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -20,22 +21,28 @@ import piotdav.entities.User;
 public class CategoryUser implements java.io.Serializable  {
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO )
+<<<<<<< HEAD
 	@Column(name="idCategoryUser",length=254)
+=======
+	@Column(name = "idCategoryUser", length = 254)
+>>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
 	private int idCategory;
 	private String libele;
+
 	@OneToMany(mappedBy = "category")
 	private Set<User> users ;
-	
 	public CategoryUser() {		
 		
 	}
 	public Set<User> getUser() {
 		return users;
 	}
+
 	public void setUser(Set<User> user) {
 		this.users = user;
 	}
 
+<<<<<<< HEAD
 	
 	public Set<User> getUsers() {
 		return users;
@@ -45,10 +52,13 @@ public class CategoryUser implements java.io.Serializable  {
 	}
 	public CategoryUser(String libele) {
 	
+=======
+	
+	public CategoryUser(String libele) {
+>>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
 		this.libele = libele;
 	}
 
-	
 	public int getIdCategoryUser() {
 		return idCategory;
 	}
@@ -61,7 +71,5 @@ public class CategoryUser implements java.io.Serializable  {
 	public void setLibele(String libele) {
 		this.libele = libele;
 	}
-	
-	
 	
 }

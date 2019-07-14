@@ -2,6 +2,7 @@ otdav\resources\RightRestServices.class
 <<<<<<< HEAD
 otdav\resources\DocumentRestService.class
 otdav\resources\CategoryUserServices.class
+otdav\resources\UserRestServices.class
 otdav\resources\FeesRestServices.class
 otdav\utils\RestActivator.class
 =======

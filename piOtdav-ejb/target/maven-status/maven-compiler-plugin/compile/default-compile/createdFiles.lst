@@ -10,6 +10,7 @@ piotdav\services\IDepositService.class
 piotdav\entities\CategoryUser.class
 piotdav\entities\Fees.class
 piotdav\services\NotificationService.class
+piotdav\services\IUserService.class
 piotdav\entities\User.class
 <<<<<<< HEAD
 piotdav\services\IFeesService.class
@@ -53,10 +54,14 @@ piotdav\implement\NotificationService.class
 piotdav\implement\RightService.class
 piotdav\entities\WorkDeposit.class
 <<<<<<< HEAD
+<<<<<<< HEAD
 piotdav\entities\CategoryDeposit.class
 =======
 piotdav\entities\TypeNotif.class
 >>>>>>> 19a200212f2aeb29b37f5a21edca825364b1ee2d
+=======
+piotdav\implement\UserService.class
+>>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
 piotdav\entities\Resignation.class
 piotdav\entities\Right.class
 piotdav\implement\CategoryDepositSercive.class

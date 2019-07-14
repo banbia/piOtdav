@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-web\src\main\java\otdav\resources\RightRestServices.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-web\src\main\java\otdav\resources\CategoryUserServices.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-web\src\main\java\otdav\utils\RestActivator.java
@@ -23,3 +24,10 @@ C:\Users\Banbia\workspace\piOtdav\piOtdav-web\src\main\java\otdav\resources\Righ
 >>>>>>> a54cbb737cd789d71219446139a57902cef8a157
 >>>>>>> 19a200212f2aeb29b37f5a21edca825364b1ee2d
 >>>>>>> c4bfd2720e2e81271310492344895b02538e3d27
+=======
+C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-web\src\main\java\otdav\resources\RightRestServices.java
+C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-web\src\main\java\otdav\utils\RestActivator.java
+C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-web\src\main\java\otdav\resources\CategoryUserServices.java
+C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-web\src\main\java\otdav\resources\FeesRestServices.java
+C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-web\src\main\java\otdav\resources\UserRestServices.java
+>>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
