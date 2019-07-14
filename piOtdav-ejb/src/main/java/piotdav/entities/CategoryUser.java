@@ -21,11 +21,7 @@ import piotdav.entities.User;
 public class CategoryUser implements java.io.Serializable  {
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO )
-<<<<<<< HEAD
-	@Column(name="idCategoryUser",length=254)
-=======
 	@Column(name = "idCategoryUser", length = 254)
->>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
 	private int idCategory;
 	private String libele;
 
@@ -42,20 +38,8 @@ public class CategoryUser implements java.io.Serializable  {
 		this.users = user;
 	}
 
-<<<<<<< HEAD
-	
-	public Set<User> getUsers() {
-		return users;
-	}
-	public void setUsers(Set<User> users) {
-		this.users = users;
-	}
-	public CategoryUser(String libele) {
-	
-=======
 	
 	public CategoryUser(String libele) {
->>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
 		this.libele = libele;
 	}
 

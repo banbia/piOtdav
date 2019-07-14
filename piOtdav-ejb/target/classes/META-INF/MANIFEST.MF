@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: Banbia
 Build-Jdk: 1.8.0_111
-=======
-Built-By: hayfaAdmin
-Build-Jdk: 1.8.0_201
->>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
 Created-By: Maven Integration for Eclipse
 

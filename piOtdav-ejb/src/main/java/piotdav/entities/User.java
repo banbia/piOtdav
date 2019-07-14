@@ -94,14 +94,9 @@ public class User implements java.io.Serializable {
 	private Set<Division> divisions ;
 	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
 	private Set<Document> documents ;
-<<<<<<< HEAD
 	@OneToMany(mappedBy = "user")
 	private Set<Resignation> resignations;
 	
-=======
-
->>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
-
 	public User() {
 	}
 
@@ -486,17 +481,6 @@ public class User implements java.io.Serializable {
 
 	public void setDocuments(Set<Document> documents) {
 		this.documents = documents;
-	}
-
-	
-	
-
-	public CategoryUser getCategory() {
-		return category;
-	}
-
-	public void setCategory(CategoryUser category) {
-		this.category = category;
 	}
 
 	@Override
