@@ -2,17 +2,19 @@ package piotdav.services;
 
 import java.util.List;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
+
 
 import piotdav.entities.Category;
 
-@Remote
+@Local
 public interface ICategoryService {
 	
-	public void  addCategory(Category category);
-	public String removeCategory(int idCategory);
-	public String updateCategory(Category NewCategory);
+	public Boolean  addCategory(Category category);
+	public int removeCategory(int idCategory);
+	public Boolean updateCategory(Category NewCategory);
 	public Category findCategoryById(int id);
 	public List<Category> findAllCategory();
+	
 
 }

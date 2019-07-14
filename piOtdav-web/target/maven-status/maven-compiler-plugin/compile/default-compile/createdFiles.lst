@@ -1,2 +1,4 @@
-otdav\utils\RestActivator.class
 otdav\resources\RightRestServices.class
+otdav\utils\RestActivator.class
+otdav\resources\CategoryRestServices.class
+otdav\resources\WorkRestServices.class
