@@ -41,6 +41,14 @@ public class User implements java.io.Serializable {
 	@JoinColumn(name = "categoryUser", nullable = false)
 	private CategoryUser category;
 	
+	public CategoryUser getCategory() {
+		return category;
+	}
+
+	public void setCategory(CategoryUser category) {
+		this.category = category;
+	}
+
 	private String lastName;
 	private String firstName;
 	private String cin;

@@ -15,31 +15,28 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import piotdav.entities.Fees;
-import piotdav.implement.FeesService;
-import piotdav.services.IFeesService;
-
-
-
+import piotdav.entities.Document;
+import piotdav.implement.DocumentService;
+import piotdav.services.IDocumentService;
 @ManagedBean
 @RequestScoped
-@Path("fees")
-public class FeesRestServices {
+@Path("document")
+public class DocumentRestService {
 	@EJB
-	private IFeesService metier = new FeesService();
+	private IDocumentService metier = new DocumentService();
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getListe(){
-		return Response.status(Status.OK).entity("Fees").build();
+		return Response.status(Status.OK).entity("Document").build();
 	}
 	
 	@POST
 	@Path("add")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response AddFees(Fees fees) {
-		if (metier.addFees(fees) == true) {
-			return Response.status(Status.CREATED).entity("fees added").build();
+	public Response AddDocument(Document document) {
+		if (metier.addDocument(document) == true) {
+			return Response.status(Status.CREATED).entity("Document added").build();
 		}
 		return Response.status(Status.NOT_ACCEPTABLE).build();
 	}
@@ -47,9 +44,9 @@ public class FeesRestServices {
 	@PUT
 	@Path("update")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updatFees(Fees fees) {		
-		if (metier.updateFees(fees) == true) {
-			return Response.status(Status.OK).entity("fees updated").build();
+	public Response updatDocument(Document document) {		
+		if (metier.updateDocument(document) == true) {
+			return Response.status(Status.OK).entity("Document updated").build();
 		}
 		return Response.status(Status.NOT_ACCEPTABLE).build();
 
@@ -57,8 +54,8 @@ public class FeesRestServices {
 	@DELETE
 	@Path("delete")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response deleteFees(Fees fess) {
-		if (metier.deleteFees(fess.getIdFees()) == true) {
+	public Response deleteDocument(Document document) {
+		if (metier.deleteDocument(document.getIdDocument()) == true) {
 			return Response.status(Status.OK).entity("deleted").build();
 		}
 		return Response.status(Status.NOT_ACCEPTABLE).build();
@@ -66,17 +63,16 @@ public class FeesRestServices {
 	}
 	
 	@GET
-	@Path("getFees")
+	@Path("getDocument")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getOneFee(@QueryParam(value="idFees")int idFees){
-		 return Response.ok(metier.findFeesById(idFees), MediaType.APPLICATION_JSON).build();
+	public Response getOneFee(@QueryParam(value="idDocument")int idDocument){
+		 return Response.ok(metier.findDocumentById(idDocument), MediaType.APPLICATION_JSON).build();
 
 	}
 	@GET
 	@Path("listeAll")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAllFees(@QueryParam(value="idUser")int idUser){
-		return Response.status(Status.OK).entity(metier.listFees(idUser)).build();
+	public Response getAllDocument(@QueryParam(value="idUser")int idUser){
+		return Response.status(Status.OK).entity(metier.listDocument(idUser)).build();
 	}
-	
 }

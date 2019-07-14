@@ -1,4 +1,5 @@
 otdav\resources\RightRestServices.class
+otdav\resources\DocumentRestService.class
 otdav\resources\CategoryUserServices.class
 otdav\resources\FeesRestServices.class
 otdav\utils\RestActivator.class

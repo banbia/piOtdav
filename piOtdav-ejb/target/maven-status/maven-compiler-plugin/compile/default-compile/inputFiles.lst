@@ -3,10 +3,12 @@ C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\De
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryService.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Document.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\TypeWork.java
+C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IDocumentService.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Division.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Resignation.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IFeesService.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\DepositService.java
+C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\DocumentService.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\User.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IRightService.java
 C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\WorkDeposit.java

@@ -10,9 +10,9 @@ import piotdav.entities.User;
 @Local
 public interface IFeesService {
 	public boolean addFees(Fees fees);
-	public void updateFees(Fees fees);
+	public boolean updateFees(Fees fees);
 	public Fees getFeesByUser(User user);
 	public Fees findFeesById(int idFees);
-	public void deleteFess(Fees fees) ;
-	public List<Fees> getFees();
+	public boolean  deleteFees(int idFees) ;
+	public List<Fees> listFees(int idUser);
 }

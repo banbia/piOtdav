@@ -34,10 +34,10 @@ public class CategoryUserServices {
 	@Path("add")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response AjoutercategoriesUser(CategoryUser categoriesUser) {
-		categoriesUser.setUser(null);
+
 		if (metier.addCategoryUser(categoriesUser)== true) {
 
-			return Response.status(Status.CREATED).entity("categoriesUser added").build();
+			return Response.status(Status.CREATED).entity(categoriesUser.getLibele()).build();
 		}
 
 		return Response.status(Status.NOT_ACCEPTABLE).build();

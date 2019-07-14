@@ -1,4 +1,5 @@
 piotdav\services\ICategoryService.class
+piotdav\services\IDocumentService.class
 piotdav\entities\CategoryUser.class
 piotdav\entities\Fees.class
 piotdav\services\NotificationService.class
@@ -18,6 +19,7 @@ piotdav\entities\Division.class
 piotdav\entities\Notification.class
 piotdav\entities\Document.class
 piotdav\services\IRightService.class
+piotdav\implement\DocumentService.class
 piotdav\entities\Etat.class
 piotdav\implement\RightService.class
 piotdav\entities\WorkDeposit.class

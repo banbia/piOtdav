@@ -2,11 +2,12 @@ package piotdav.services;
 
 import java.util.List;
 
+import javax.ejb.Local;
 import javax.ejb.Remote;
 
 import piotdav.entities.Category;
 
-@Remote
+@Local
 public interface ICategoryService {
 	
 	public void  addCategory(Category category);

@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,11 +20,16 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "document", catalog = "pi_otdav")
 public class Document implements java.io.Serializable {
-
+	
+	@Id	
+	@GeneratedValue (strategy = GenerationType.AUTO )
+	@Column(name = "idDocument", unique = true, nullable = false)
 	private int idDocument;
 	@ManyToOne
 	@JoinColumn(name = "user", nullable = false)
 	private User user;
+
+
 	private Date dateAjout;
 	private String lieu;
 	private String nomDocument;
@@ -30,7 +37,23 @@ public class Document implements java.io.Serializable {
 
 	public Document() {
 	}
+	public Document(int idDocument) {
+		this.idDocument = idDocument;
+	}
 
+	public Document(int idDocument, Date dateAjout, String lieu, String nomDocument, Integer typeDocument) {
+		this.idDocument = idDocument;
+		this.dateAjout = dateAjout;
+		this.lieu = lieu;
+		this.nomDocument = nomDocument;
+		this.typeDocument = typeDocument;
+	}
+	public Document( Date dateAjout, String lieu, String nomDocument, Integer typeDocument) {		
+		this.dateAjout = dateAjout;
+		this.lieu = lieu;
+		this.nomDocument = nomDocument;
+		this.typeDocument = typeDocument;
+	}
 	public Document(int idDocument, User user) {
 		this.idDocument = idDocument;
 		this.user = user;
@@ -45,9 +68,7 @@ public class Document implements java.io.Serializable {
 		this.typeDocument = typeDocument;
 	}
 
-	@Id
 
-	@Column(name = "idDocument", unique = true, nullable = false)
 	public int getIdDocument() {
 		return this.idDocument;
 	}

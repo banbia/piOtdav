@@ -25,16 +25,37 @@ public class Fees implements java.io.Serializable {
 	private int idFees;
 	private Float montant;	
 	@ManyToOne
-	@JoinColumn(name = "idUser", nullable = false)
+	@JoinColumn(name = "idUser", nullable = true)
 	private User user;
+	
+	
 	public Fees() {
 	}
+	
+	public Fees(int idFees) {
+		this.idFees = idFees;
+	}
 
+	public Fees(int idFees, Float montant) {
+		this.idFees = idFees;
+		this.montant = montant;
+	}
 	public Fees(int idFees, Float montant, User user) {
-		super();
 		this.idFees = idFees;
 		this.montant = montant;
 		this.user = user;
+	}
+	public Fees( Float montant, User user) {
+		this.montant = montant;
+		this.user = user;
+	}
+	public Fees( Float montant) {
+		this.montant = montant;
+	}
+	public Fees(int idFees, Float montant, int idCategory) {
+		super();
+		this.idFees = idFees;
+		this.montant = montant;
 	}
 
 	public User getUser() {
@@ -44,21 +65,6 @@ public class Fees implements java.io.Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	
-
-	public Fees(int idFees, Float montant, int idCategory) {
-		super();
-		this.idFees = idFees;
-		this.montant = montant;
-	}
-
-
-	public Fees(int idFees, Float montant) {
-		this.idFees = idFees;
-		this.montant = montant;
-	}
-
 
 	@Column(name = "idFees", unique = true, nullable = false)
 	public int getIdFees() {
