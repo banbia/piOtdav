@@ -29,7 +29,7 @@ public class Right implements java.io.Serializable {
 	private String libele;
 	private String reference;
 	private String description;
-	@ManyToMany(mappedBy="rights")
+	@ManyToMany(fetch = FetchType.LAZY,mappedBy="rights")
 	private List<Work> works ;
 	public Right() {
 	}
@@ -43,6 +43,13 @@ public class Right implements java.io.Serializable {
 		this.reference = reference;
 		this.libele = libele;
 		this.description = description;
+	}
+	public Right(int idRight,String reference, String libele,String description,List<Work> works) {
+		this.idRight = idRight;
+		this.reference = reference;
+		this.libele = libele;
+		this.description = description;
+		this.works = works;
 	}
 	public Right(int idRight,String reference) {
 		this.idRight = idRight;

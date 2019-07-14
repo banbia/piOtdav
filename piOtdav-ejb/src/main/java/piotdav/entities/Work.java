@@ -30,6 +30,7 @@ import javax.persistence.TemporalType;
 public class Work implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
+	@Column(name = "idWork", unique = true, nullable = false)
 	private int idWork;
 	@ManyToOne
 	@JoinColumn(name = "user", nullable = true)
@@ -55,11 +56,11 @@ public class Work implements java.io.Serializable {
 	private String copyTaxIdentificationNumber;
 	private String copydeclarationOfExistance;
 	private String copymanagerIdentityCard;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category", nullable = true)
 	private Category category;
 	
-	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "works_rights", joinColumns = { @JoinColumn(name = "FK_WORK") }, inverseJoinColumns = {
 			@JoinColumn(name = "FK_RIGHT") })
 	private List<Right> rights ;
@@ -68,7 +69,6 @@ public class Work implements java.io.Serializable {
 	}
 
 	public Work(int idWork, List<Right> rights) {
-		super();
 		this.idWork = idWork;
 		this.rights = rights;
 	}
@@ -80,12 +80,10 @@ public class Work implements java.io.Serializable {
 	
 
 	public Work(int etat) {
-		super();		
 		this.etat=etat;	
 	}
 
 	public Work(int idWork, User user, Category category, TypeWork typeWork) {
-		super();
 		this.idWork = idWork;
 		this.user = user;
 		this.typeWork = typeWork;
@@ -115,7 +113,6 @@ public class Work implements java.io.Serializable {
 	public Work(int idWork, User user, String titre, String compositeur, String ville, Date date,
 			String genre, Integer duree, Float pourcentAdaptateur, Float pourcentArrangeur, Float pourcentAuteur,
 			Float pourcentCompositeur, Float pourcentEditeur, TypeWork typeWork, Set<Division> divisions) {
-		super();
 		this.idWork = idWork;
 		this.user = user;
 		this.titre = titre;
@@ -138,7 +135,6 @@ public class Work implements java.io.Serializable {
 	public Work(int idWork, User user, String titre, String compositeur, String ville, Date date, String genre,
 			Integer duree, int etat, Float pourcentAdaptateur, Float pourcentArrangeur, Float pourcentAuteur,
 			Float pourcentCompositeur, Float pourcentEditeur, TypeWork typeWork) {
-		super();
 		this.idWork = idWork;
 		this.user = user;
 		this.titre = titre;
@@ -162,7 +158,6 @@ public class Work implements java.io.Serializable {
 			String copyOfWork, String tradRegisterExcept, String statutOfCompany,
 			String copyOfThePublicationOfCaompnyJORT, String copyTaxIdentificationNumber,
 			String copydeclarationOfExistance, String copymanagerIdentityCard) {
-		super();
 		this.idWork = idWork;
 		this.user = user;
 		this.titre = titre;
@@ -195,7 +190,6 @@ public class Work implements java.io.Serializable {
 			String copyOfWork, String tradRegisterExcept, String statutOfCompany,
 			String copyOfThePublicationOfCaompnyJORT, String copyTaxIdentificationNumber,
 			String copydeclarationOfExistance, String copymanagerIdentityCard, Category category) {
-		super();
 		this.idWork = idWork;
 		this.user = user;
 		this.titre = titre;
@@ -222,7 +216,7 @@ public class Work implements java.io.Serializable {
 		this.category = category;
 	}
 
-	@Column(name = "idWork", unique = true, nullable = false)
+	
 	public int getIdWork() {
 		return this.idWork;
 	}

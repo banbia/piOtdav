@@ -2,11 +2,13 @@ package piotdav.implement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import piotdav.entities.Notification;
@@ -49,15 +51,16 @@ public class RightService implements IRightService{
 	}
 	@Override
 	public Right getRightByReference(String reference) {
-		TypedQuery<Right> query = em.createQuery(
+		Query query = em.createQuery(
 				"Right u FROM Right u WHERE u.reference = :ref ", Right.class);
 		query.setParameter("ref", reference);
-		return query.getSingleResult();
+		return (Right) query.getSingleResult();
 	}
 	@Override
 	public List<Right> getRightsByWork(int workId) {
 //		User user = em.find(User.class, idUser);
 		Work work = em.find(Work.class, workId);
+		System.out.println(work);
 		return (List<Right>) work.getRights();
 	}
 	@Override

@@ -1,6 +1,7 @@
 package otdav.resources;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
@@ -69,11 +70,25 @@ public class RightRestServices {
 				.entity("Your request have been rejected, This Right linked to one or more work(s)").build();
 
 	}
+	@GET
+	@Path("byRef")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getRightByRef(@QueryParam(value = "ref") String ref) {
+		if(ref==null) {
+			return Response.status(Status.NOT_ACCEPTABLE).entity("ref null").build();
+		}
+		Right right = metier.getRightByReference(ref);
+		if (right == null ) {
+			return Response.status(Status.NOT_FOUND).entity("No Right found with this ref").build();
+		}
+		return Response.status(Status.FOUND).entity(right).build();
 
+	}
 	@GET
 	@Path("listByWork")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getListe(@QueryParam(value = "idWork") int idWork) {
+		
 		List<Right> liste = metier.getRightsByWork(idWork);
 		if (liste.isEmpty()) {
 			return Response.status(Status.NOT_FOUND).entity("No Rights linked to this work").build();

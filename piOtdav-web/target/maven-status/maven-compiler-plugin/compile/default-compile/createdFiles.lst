@@ -1,22 +1,12 @@
 otdav\resources\RightRestServices.class
-<<<<<<< HEAD
 otdav\resources\DocumentRestService.class
+otdav\resources\DepositWebService.class
+otdav\resources\CategoryRestServices.class
+otdav\resources\NotificationRestServices.class
+otdav\resources\CategorydepositService.class
+otdav\resources\ResignationRestServices.class
 otdav\resources\CategoryUserServices.class
 otdav\resources\UserRestServices.class
 otdav\resources\FeesRestServices.class
 otdav\utils\RestActivator.class
-=======
-<<<<<<< HEAD
-piotdav\services\CategorydepositService.class
-otdav\resources\DepositWebService.class
-otdav\utils\RestActivator.class
-=======
-<<<<<<< HEAD
-otdav\utils\RestActivator.class
-otdav\resources\CategoryRestServices.class
 otdav\resources\WorkRestServices.class
-=======
-otdav\resources\NotificationRestServices.class
->>>>>>> a54cbb737cd789d71219446139a57902cef8a157
->>>>>>> 19a200212f2aeb29b37f5a21edca825364b1ee2d
->>>>>>> c4bfd2720e2e81271310492344895b02538e3d27

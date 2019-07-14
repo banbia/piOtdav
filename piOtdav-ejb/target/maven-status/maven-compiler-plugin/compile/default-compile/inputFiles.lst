@@ -1,104 +1,31 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Etat.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Deposit.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Document.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\TypeWork.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IDocumentService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Division.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Resignation.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IFeesService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\DepositService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\DocumentService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\User.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IRightService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\WorkDeposit.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\NotificationService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Fees.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Right.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Notification.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\CategoryUser.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\WorkService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IWorkService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Category.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Work.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryUserService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\FeesService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\RightService.java
-C:\Users\Boufares\PI_OTDAV\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryUserService.java
-=======
-<<<<<<< HEAD
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryDepositSercive.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\TypeWork.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Division.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Etat.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\DepositService.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\CategoryUser.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Notification.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\WorkService.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IDepositService.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\User.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Document.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\WorkDeposit.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\RightService.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Right.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Resignation.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Work.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Fees.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryService.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\NotificationService.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryDepositService.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Category.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Deposit.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IWorkService.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\CategoryDeposit.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IRightService.java
-C:\Users\safra\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryService.java
-=======
-<<<<<<< HEAD
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\CategoryUser.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Notification.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IWorkService.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Division.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Category.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\WorkService.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\WorkDeposit.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Document.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Right.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\User.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryService.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\NotificationService.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Resignation.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Deposit.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Work.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Fees.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\TypeWork.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IRightService.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\RightService.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Etat.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\DepositService.java
-C:\Users\Yora\Desktop\Esprit 3 eme\Projects JEE\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryService.java
-=======
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IUserService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\CategoryUser.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Notification.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\RightService.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\CategoryDeposit.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IRightService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Resignation.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryUserService.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\DepositService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Right.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Division.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryDepositSercive.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\FeesService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\TypeNotif.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\NotificationService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\INotificationService.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\DocumentService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\WorkService.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IResignationService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\NotificationService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IWorkService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Document.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IDocumentService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Etat.java
-C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\DepositService.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\ResignationService.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryUserService.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Category.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\User.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Deposit.java
@@ -106,36 +33,7 @@ C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Fee
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Work.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\TypeWork.java
 C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\WorkDeposit.java
->>>>>>> a54cbb737cd789d71219446139a57902cef8a157
->>>>>>> 19a200212f2aeb29b37f5a21edca825364b1ee2d
->>>>>>> c4bfd2720e2e81271310492344895b02538e3d27
-=======
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\RightService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IFeesService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\DepositService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\WorkService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IWorkService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Deposit.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\WorkDeposit.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\UserService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Division.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryUserService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IRightService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\CategoryUserService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Right.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IUserService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Document.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\NotificationService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Etat.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Category.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Fees.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Resignation.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\TypeWork.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Notification.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\CategoryUser.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\Work.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\FeesService.java
-C:\Users\hayfaAdmin\WorkSpacePI\piOtdav\piOtdav\piOtdav-ejb\src\main\java\piotdav\entities\User.java
->>>>>>> bac28a6136d0664af15f2d6cfec1ccf4e5f40ee8
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\implement\UserService.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IDepositService.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\ICategoryDepositService.java
+C:\Users\Banbia\workspace\piOtdav\piOtdav-ejb\src\main\java\piotdav\services\IFeesService.java
