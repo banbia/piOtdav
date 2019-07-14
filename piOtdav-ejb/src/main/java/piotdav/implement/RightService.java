@@ -7,56 +7,71 @@ import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
+import piotdav.entities.Notification;
 import piotdav.entities.Right;
+import piotdav.entities.Work;
 import piotdav.services.IRightService;
 @Stateless
 public class RightService implements IRightService{
-	private List<Right> rights;
+	
 	@PersistenceContext(unitName = "otdav-ejb")
 	EntityManager em;
-//	public RightService() {
-//		rights=new ArrayList<Right>();
-//		rights.add(new Right(1,"ref1","Libelle1", "Lorem ispum sit amet dolor"));
-//		rights.add(new Right(2,"ref2","Libelle2", "Lorem ispum sit amet dolor"));
-//		rights.add(new Right(3,"ref3","Libelle3", "Lorem ispum sit amet dolor"));
-//		rights.add(new Right(4,"ref4","Libelle4", "Lorem ispum sit amet dolor"));
-//		rights.add(new Right(5,"ref5","Libelle5", "Lorem ispum sit amet dolor"));
-//	}
-
-	public List<Right> getRights() {
-		return rights;
-	}
-
-	public void setRights(List<Right> rights) {
-		this.rights = rights;
-	}
-	
-	public Right getRightByReference(String reference){
-		for (Right l:rights){
-			if(l.getReference()==reference)
-				return l;
-		}
-		return null;
-	}
 	
 	public boolean addRight(Right right){
 		  em.persist(right);
-//		String query = "insert into right (idRight,description,libele,reference) values(?,?,?,?,?)";
-//
-//		em.createNativeQuery(query)
-//			.setParameter(0, right.getIdRight())
-//			.setParameter(1, right.getDescription())
-//			.setParameter(2, right.getLibele())
-//		   .setParameter(3, right.getReference())
-//		   .executeUpdate();
 		 return true;
 	}
-	public void updateRight(Right right){
-		em.persist(right);
+	public boolean updateRight(Right right){
+		Right r = em.find(Right.class, right.getIdRight());
+		if(r.getWorks().isEmpty()) {
+			if(right.getDescription()!=null)
+				r.setDescription(right.getDescription());
+			if(right.getLibele()!=null)
+				r.setLibele(right.getLibele());
+			if(right.getReference()!=null)
+				r.setReference(right.getReference());
+			
+			em.persist(r);
+			return true;
+		}
+		return false;
 	}
 	
-	public void deleteRight(Right right){
-		em.remove(right);
+	public boolean deleteRight(int idRight){
+		Right right = em.find(Right.class, idRight);
+		if(right.getWorks().isEmpty()) {
+			em.remove(right);
+			return true;
+		}
+		return false;
 	}
+	@Override
+	public Right getRightByReference(String reference) {
+		TypedQuery<Right> query = em.createQuery(
+				"Right u FROM Right u WHERE u.reference = :ref ", Right.class);
+		query.setParameter("ref", reference);
+		return query.getSingleResult();
+	}
+	@Override
+	public List<Right> getRightsByWork(int workId) {
+//		User user = em.find(User.class, idUser);
+		Work work = em.find(Work.class, workId);
+		return (List<Right>) work.getRights();
+	}
+	@Override
+	public boolean linkRightsToWork(int idRight, int idWork) {
+		Right right = em.find(Right.class, idRight);
+		Work work = em.find(Work.class, idWork);
+		List<Right> liste = this.getRightsByWork( idWork);
+		if (liste.contains(right)) {
+			return false;
+		}
+		liste.add(right);
+		work.setRights(liste);
+		em.persist(work);
+		return true;
+	}
+
 }

@@ -3,6 +3,7 @@ package piotdav.entities;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -51,12 +52,18 @@ public class Work implements java.io.Serializable {
 	private String copydeclarationOfExistance;
 	private String copymanagerIdentityCard;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinTable(name = "works_rights", joinColumns = { @JoinColumn(name = "FK_WORK") }, inverseJoinColumns = {
 			@JoinColumn(name = "FK_RIGHT") })
-	private Set<Right> rights = new HashSet(0);
+	private List<Right> rights ;
 
 	public Work() {
+	}
+
+	public Work(int idWork, List<Right> rights) {
+		super();
+		this.idWork = idWork;
+		this.rights = rights;
 	}
 
 	public Work(int idWork, User user) {
@@ -123,6 +130,14 @@ public class Work implements java.io.Serializable {
 	}
 
 	
+	public List<Right> getRights() {
+		return rights;
+	}
+
+	public void setRights(List<Right> rights) {
+		this.rights = rights;
+	}
+
 	public User getUser() {
 		return this.user;
 	}
