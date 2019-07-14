@@ -1,2 +1,4 @@
-otdav\utils\RestActivator.class
 otdav\resources\RightRestServices.class
+piotdav\services\CategorydepositService.class
+otdav\resources\DepositWebService.class
+otdav\utils\RestActivator.class
