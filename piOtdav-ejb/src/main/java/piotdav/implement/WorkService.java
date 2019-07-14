@@ -1,36 +1,56 @@
 package piotdav.implement;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import javax.persistence.TypedQuery;
+
 
 import piotdav.entities.TypeWork;
 import piotdav.entities.Work;
 import piotdav.services.IWorkService;
-
+@Stateless
 public class WorkService implements IWorkService{
 	
 	@PersistenceContext(unitName = "otdav-ejb")
 	EntityManager em;
 
 	@Override
-	public void addWork(Work work) {
+	public Boolean addWork(Work work) {
 		// TODO Auto-generated method stub
-		em.persist(work);
+		Date myDate = new Date();
+		String date= new SimpleDateFormat("yyyy-MM-dd").format(myDate);
+		Date date1;
+		try {
+		date1 = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+		work.setDate(date1);
+		} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		} 
+		try {
+			if(work!=null)
+				em.persist(work);
+				return true;
+		}catch(Exception e) {
+			return false;
+		}
 		
-		
+			
 	}
 	
 	@Override
-	public String updateWork(Work NewWork) {
-		if (em.find(Work.class, NewWork.getIdWork())==null)
-		{
-	return "Work don't existe" +NewWork.getIdWork();
-		}
-		else{
-			System.out.println("In updateOeuvre : ");
-			Work work = em.find(Work.class, NewWork.getIdWork());			
+	public Boolean updateWork(Work NewWork) {
+		
+			
+			Work work = em.find(Work.class, NewWork.getIdWork());	
+			if(work != null) {
 			work.setTitre(NewWork.getTitre());
 			work.setCompositeur(NewWork.getCompositeur());
 			work.setVille(NewWork.getVille());
@@ -48,49 +68,90 @@ public class WorkService implements IWorkService{
 			work.setCopyOfWork(NewWork.getCopyOfWork());
 			work.setCopyTaxIdentificationNumber(NewWork.getCopyTaxIdentificationNumber());
 			work.setTypeWork(NewWork.getTypeWork());
-	return "Updated with success ";
-}
-
-		
+			em.persist(work);
+			return true;
+			}
+			return false;
+	
+	
 	}
 
 	@Override
-	public Work findWorkById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Work> listWorkByUser(int idUser) {
+//		User user = em.find(User.class, idUser);
+		TypedQuery<Work> query = em.createQuery(
+				"SELECT w FROM Work w WHERE w.user.idUser = :user ", Work.class);
+		query.setParameter("user", idUser);
+		return query.getResultList();
 	}
 
 	@Override
 	public List<Work> findAllWorks() {
 		// TODO Auto-generated method stub
-		return null;
+		List<Work> works = em.createQuery("select w from Work w",Work.class).getResultList();
+		return works;
+		
 	}
+	
+	@Override
+	public List<Work> findWorkBytype(int etat) {
+		// TODO Auto-generated method stub
+		TypedQuery<Work> query = em.createQuery("select w from Work w where w.etat = :etat", Work.class);
+		query.setParameter("etat", etat);
+		try
+		{
+		return query.getResultList();
+		}
+		catch (Exception e) { return null; }
+	}
+
 
 	
 	@Override
-	public Work approveWork(Work work) {
+	public Boolean approveWork(Work work) {
 		// TODO Auto-generated method stub
-		return null;
+		try {
+			if (work != null && work.getEtat()== 1) {
+				work.setEtat(2);}
+				Work w = em.find(Work.class, work.getIdWork());
+				w.setEtat(2);
+				em.persist(w);
+				return true;
+			}catch ( Exception e ){
+				return false;}
 	}
 
 	@Override
-	public Work revokeWork(Work work) {
+	public Boolean revokeWork(Work work) {
 		// TODO Auto-generated method stub
-		return null;
+		try {
+			if (work!= null && work.getEtat()==1) {
+				work.setEtat(3);}
+				Work w = em.find(Work.class, work.getIdWork());
+				w.setEtat(3);
+				em.persist(w);
+			return true;
+			}catch ( Exception e ){
+				return false;
+				}
 	}
 
 	@Override
-	public Work cancelWork(Work work) {
+	public int cancelWork(int idWork) {
 		// TODO Auto-generated method stub
-		return null;
-	}
+		Work work = em.find(Work.class, idWork);
+		try {
+			if(work !=null && work.getEtat()==1)
+			em.remove(work);
+			return 1 ;
+			}
+			catch (Exception e) {
+			return -1;
 
-	@Override
-	public List<Work> findWorkBytype(TypeWork etat) {
-		// TODO Auto-generated method stub
-		return null;
+			}	
 	}
-
+	
+	
 	
 
 }

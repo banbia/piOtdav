@@ -29,7 +29,15 @@
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="F:/PI/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47.jar">
+=======
+<<<<<<< HEAD
+	<classpathentry kind="lib" path="C:/Users/safra/OneDrive/Bureau/PI_DEV/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47.jar">
+=======
+	<classpathentry kind="lib" path="C:/Users/Yora/Desktop/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47.jar">
+>>>>>>> 19a200212f2aeb29b37f5a21edca825364b1ee2d
+>>>>>>> c4bfd2720e2e81271310492344895b02538e3d27
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../lib"/>
 		</attributes>

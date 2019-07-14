@@ -90,6 +90,7 @@ public class User implements java.io.Serializable {
 	private Set<Document> documents ;
 	@OneToMany(mappedBy = "user")
 	private Set<Resignation> resignations;
+	
 
 	public User() {
 	}

@@ -3,12 +3,15 @@ package piotdav.entities;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -26,9 +29,10 @@ import javax.persistence.TemporalType;
 @Table(name = "work", catalog = "pi_otdav")
 public class Work implements java.io.Serializable {
 	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private int idWork;
 	@ManyToOne
-	@JoinColumn(name = "user", nullable = false)
+	@JoinColumn(name = "user", nullable = true)
 	private User user;
 	private String titre;
 	private String compositeur;
@@ -36,6 +40,7 @@ public class Work implements java.io.Serializable {
 	private Date date;
 	private String genre;
 	private Integer duree;
+	private int etat;
 	private Float pourcentAdaptateur;
 	private Float pourcentArrangeur;
 	private Float pourcentAuteur;
@@ -50,13 +55,22 @@ public class Work implements java.io.Serializable {
 	private String copyTaxIdentificationNumber;
 	private String copydeclarationOfExistance;
 	private String copymanagerIdentityCard;
+	@ManyToOne
+	@JoinColumn(name = "category", nullable = true)
+	private Category category;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinTable(name = "works_rights", joinColumns = { @JoinColumn(name = "FK_WORK") }, inverseJoinColumns = {
 			@JoinColumn(name = "FK_RIGHT") })
-	private Set<Right> rights = new HashSet(0);
+	private List<Right> rights ;
 
 	public Work() {
+	}
+
+	public Work(int idWork, List<Right> rights) {
+		super();
+		this.idWork = idWork;
+		this.rights = rights;
 	}
 
 	public Work(int idWork, User user) {
@@ -64,7 +78,11 @@ public class Work implements java.io.Serializable {
 		this.user = user;
 	}
 	
-	
+
+	public Work(int etat) {
+		super();		
+		this.etat=etat;	
+	}
 
 	public Work(int idWork, User user, Category category, TypeWork typeWork) {
 		super();
@@ -89,9 +107,10 @@ public class Work implements java.io.Serializable {
 		this.pourcentAuteur = pourcentAuteur;
 		this.pourcentCompositeur = pourcentCompositeur;
 		this.pourcentEditeur = pourcentEditeur;
+		
 	}
 	
-	
+	//physique	
 
 	public Work(int idWork, User user, String titre, String compositeur, String ville, Date date,
 			String genre, Integer duree, Float pourcentAdaptateur, Float pourcentArrangeur, Float pourcentAuteur,
@@ -112,6 +131,96 @@ public class Work implements java.io.Serializable {
 		this.pourcentEditeur = pourcentEditeur;
 		this.typeWork = typeWork;
 	}
+	
+	//Moral
+	
+
+	public Work(int idWork, User user, String titre, String compositeur, String ville, Date date, String genre,
+			Integer duree, int etat, Float pourcentAdaptateur, Float pourcentArrangeur, Float pourcentAuteur,
+			Float pourcentCompositeur, Float pourcentEditeur, TypeWork typeWork) {
+		super();
+		this.idWork = idWork;
+		this.user = user;
+		this.titre = titre;
+		this.compositeur = compositeur;
+		this.ville = ville;
+		this.date = date;
+		this.genre = genre;
+		this.duree = duree;
+		this.etat = etat;
+		this.pourcentAdaptateur = pourcentAdaptateur;
+		this.pourcentArrangeur = pourcentArrangeur;
+		this.pourcentAuteur = pourcentAuteur;
+		this.pourcentCompositeur = pourcentCompositeur;
+		this.pourcentEditeur = pourcentEditeur;
+		this.typeWork = typeWork;
+	}
+
+	public Work(int idWork, User user, String titre, String compositeur, String ville, Date date, String genre,
+			Integer duree, int etat, Float pourcentAdaptateur, Float pourcentArrangeur, Float pourcentAuteur,
+			Float pourcentCompositeur, Float pourcentEditeur, TypeWork typeWork, String bulletinOfdeclaration,
+			String copyOfWork, String tradRegisterExcept, String statutOfCompany,
+			String copyOfThePublicationOfCaompnyJORT, String copyTaxIdentificationNumber,
+			String copydeclarationOfExistance, String copymanagerIdentityCard) {
+		super();
+		this.idWork = idWork;
+		this.user = user;
+		this.titre = titre;
+		this.compositeur = compositeur;
+		this.ville = ville;
+		this.date = date;
+		this.genre = genre;
+		this.duree = duree;
+		this.etat = etat;
+		this.pourcentAdaptateur = pourcentAdaptateur;
+		this.pourcentArrangeur = pourcentArrangeur;
+		this.pourcentAuteur = pourcentAuteur;
+		this.pourcentCompositeur = pourcentCompositeur;
+		this.pourcentEditeur = pourcentEditeur;
+		this.typeWork = typeWork;
+		this.bulletinOfdeclaration = bulletinOfdeclaration;
+		this.copyOfWork = copyOfWork;
+		this.tradRegisterExcept = tradRegisterExcept;
+		this.statutOfCompany = statutOfCompany;
+		this.copyOfThePublicationOfCaompnyJORT = copyOfThePublicationOfCaompnyJORT;
+		this.copyTaxIdentificationNumber = copyTaxIdentificationNumber;
+		this.copydeclarationOfExistance = copydeclarationOfExistance;
+		this.copymanagerIdentityCard = copymanagerIdentityCard;
+	}
+
+	
+	public Work(int idWork, User user, String titre, String compositeur, String ville, Date date, String genre,
+			Integer duree, int etat, Float pourcentAdaptateur, Float pourcentArrangeur, Float pourcentAuteur,
+			Float pourcentCompositeur, Float pourcentEditeur, TypeWork typeWork, String bulletinOfdeclaration,
+			String copyOfWork, String tradRegisterExcept, String statutOfCompany,
+			String copyOfThePublicationOfCaompnyJORT, String copyTaxIdentificationNumber,
+			String copydeclarationOfExistance, String copymanagerIdentityCard, Category category) {
+		super();
+		this.idWork = idWork;
+		this.user = user;
+		this.titre = titre;
+		this.compositeur = compositeur;
+		this.ville = ville;
+		this.date = date;
+		this.genre = genre;
+		this.duree = duree;
+		this.etat = etat;
+		this.pourcentAdaptateur = pourcentAdaptateur;
+		this.pourcentArrangeur = pourcentArrangeur;
+		this.pourcentAuteur = pourcentAuteur;
+		this.pourcentCompositeur = pourcentCompositeur;
+		this.pourcentEditeur = pourcentEditeur;
+		this.typeWork = typeWork;
+		this.bulletinOfdeclaration = bulletinOfdeclaration;
+		this.copyOfWork = copyOfWork;
+		this.tradRegisterExcept = tradRegisterExcept;
+		this.statutOfCompany = statutOfCompany;
+		this.copyOfThePublicationOfCaompnyJORT = copyOfThePublicationOfCaompnyJORT;
+		this.copyTaxIdentificationNumber = copyTaxIdentificationNumber;
+		this.copydeclarationOfExistance = copydeclarationOfExistance;
+		this.copymanagerIdentityCard = copymanagerIdentityCard;
+		this.category = category;
+	}
 
 	@Column(name = "idWork", unique = true, nullable = false)
 	public int getIdWork() {
@@ -123,6 +232,14 @@ public class Work implements java.io.Serializable {
 	}
 
 	
+	public List<Right> getRights() {
+		return rights;
+	}
+
+	public void setRights(List<Right> rights) {
+		this.rights = rights;
+	}
+
 	public User getUser() {
 		return this.user;
 	}
@@ -184,6 +301,14 @@ public class Work implements java.io.Serializable {
 
 	public void setDuree(Integer duree) {
 		this.duree = duree;
+	}	
+
+	public int getEtat() {
+		return etat;
+	}
+
+	public void setEtat(int etat) {
+		this.etat = etat;
 	}
 
 	@Column(name = "pourcentAdaptateur", precision = 12, scale = 0)
@@ -302,5 +427,15 @@ public class Work implements java.io.Serializable {
 	public void setCopymanagerIdentityCard(String copymanagerIdentityCard) {
 		this.copymanagerIdentityCard = copymanagerIdentityCard;
 	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
+	
 
 }

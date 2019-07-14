@@ -2,21 +2,22 @@ package piotdav.services;
 
 import java.util.List;
 
+import javax.ejb.Local;
 import javax.ejb.Remote;
 
 import piotdav.entities.TypeWork;
 import piotdav.entities.Work;
 
-@Remote
+@Local
 public interface IWorkService {
 	
-	public void  addWork(Work work);
-	public Work approveWork (Work work);
-	public Work revokeWork (Work work);
-	public Work cancelWork (Work work); // delete
-	public String updateWork(Work NewWork);
-	public Work findWorkById(int id);
-	public List<Work> findWorkBytype(TypeWork etat);
+	public Boolean  addWork(Work work);
+	public Boolean approveWork (Work work);
+	public Boolean revokeWork (Work work);
+	public int cancelWork (int intWork); // delete
+	public Boolean updateWork(Work work);	
+	public List<Work> findWorkBytype(int etat);
 	public List<Work> findAllWorks();
+	public List<Work> listWorkByUser(int idUser);
 
 }
