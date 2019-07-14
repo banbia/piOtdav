@@ -1,0 +1,64 @@
+piotdav\services\ICategoryService.class
+<<<<<<< HEAD
+piotdav\services\IDocumentService.class
+=======
+<<<<<<< HEAD
+piotdav\services\IDepositService.class
+=======
+>>>>>>> 19a200212f2aeb29b37f5a21edca825364b1ee2d
+>>>>>>> c4bfd2720e2e81271310492344895b02538e3d27
+piotdav\entities\CategoryUser.class
+piotdav\entities\Fees.class
+piotdav\services\NotificationService.class
+piotdav\entities\User.class
+<<<<<<< HEAD
+piotdav\services\IFeesService.class
+piotdav\entities\Work.class
+piotdav\implement\CategoryService.class
+piotdav\implement\WorkService.class
+piotdav\implement\CategoryUserService.class
+piotdav\entities\TypeWork.class
+piotdav\services\DepositService.class
+piotdav\entities\Category.class
+piotdav\services\ICategoryUserService.class
+piotdav\implement\FeesService.class
+=======
+<<<<<<< HEAD
+piotdav\entities\Work.class
+piotdav\services\ICategoryDepositService.class
+piotdav\implement\CategoryService.class
+piotdav\implement\WorkService.class
+piotdav\entities\TypeWork.class
+=======
+piotdav\services\INotificationService.class
+piotdav\entities\Work.class
+piotdav\implement\CategoryService.class
+piotdav\implement\WorkService.class
+piotdav\entities\TypeWork.class
+piotdav\services\DepositService.class
+>>>>>>> 19a200212f2aeb29b37f5a21edca825364b1ee2d
+piotdav\entities\Category.class
+>>>>>>> c4bfd2720e2e81271310492344895b02538e3d27
+piotdav\services\IWorkService.class
+piotdav\entities\Division.class
+piotdav\entities\Notification.class
+piotdav\entities\Document.class
+piotdav\services\IRightService.class
+<<<<<<< HEAD
+piotdav\implement\DocumentService.class
+=======
+>>>>>>> c4bfd2720e2e81271310492344895b02538e3d27
+piotdav\entities\Etat.class
+piotdav\implement\NotificationService.class
+piotdav\implement\RightService.class
+piotdav\entities\WorkDeposit.class
+<<<<<<< HEAD
+piotdav\entities\CategoryDeposit.class
+=======
+piotdav\entities\TypeNotif.class
+>>>>>>> 19a200212f2aeb29b37f5a21edca825364b1ee2d
+piotdav\entities\Resignation.class
+piotdav\entities\Right.class
+piotdav\implement\CategoryDepositSercive.class
+piotdav\implement\DepositService.class
+piotdav\entities\Deposit.class

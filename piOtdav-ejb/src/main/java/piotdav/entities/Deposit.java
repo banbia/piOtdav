@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,6 +21,9 @@ import javax.persistence.TemporalType;
 @Table(name = "deposit", catalog = "pi_otdav")
 public class Deposit implements java.io.Serializable {
 
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idDeposit;
 	@ManyToOne
 	@JoinColumn(name = "idUser", nullable = false)
@@ -31,7 +36,10 @@ public class Deposit implements java.io.Serializable {
 	private Integer numQuitance;
 	private Date dateDebutDepot;
 	private Date dateFinDepot;
-	private Etat etat;
+	private String etat;
+	@ManyToOne
+	@JoinColumn(name = "categoryDeposit", nullable = false)
+	private CategoryDeposit categoryDeposit;
 
 	public Deposit() {
 	}
@@ -43,7 +51,7 @@ public class Deposit implements java.io.Serializable {
 	}
 
 	public Deposit(int idDeposit, User user, WorkDeposit workDeposit, Integer numDepot, Date dateDepot,
-			Integer numQuitance, Date dateDebutDepot, Date dateFinDepot, Etat etat) {
+			Integer numQuitance, Date dateDebutDepot, Date dateFinDepot, String etat) {
 		this.idDeposit = idDeposit;
 		this.user = user;
 		this.workDeposit = workDeposit;
@@ -54,8 +62,26 @@ public class Deposit implements java.io.Serializable {
 		this.dateFinDepot = dateFinDepot;
 		this.etat = etat;
 	}
+	
+	
+	
+	public Deposit(int idDeposit,Date dateDebutDepot, Date dateFinDepot) {
+		this.idDeposit = idDeposit;
+		this.dateDebutDepot = dateDebutDepot;
+		this.dateFinDepot = dateFinDepot;
+		
+	}
+	
+	
+	public Deposit(int idDeposit, WorkDeposit workDeposit,CategoryDeposit categoryDeposit ) {
+		this.idDeposit = idDeposit;
+		
+		this.workDeposit = workDeposit;
+		this.categoryDeposit= categoryDeposit;
+		
+	}
 
-	@Id
+	
 	@Column(name = "idDeposit", unique = true, nullable = false)
 	public int getIdDeposit() {
 		return this.idDeposit;
@@ -132,12 +158,18 @@ public class Deposit implements java.io.Serializable {
 	}
 
 	@Column(name = "etat", length = 254)
-	public Etat getEtat() {
+	public String getEtat() {
 		return this.etat;
 	}
 
-	public void setEtat(Etat etat) {
+	public void setEtat(String etat) {
 		this.etat = etat;
 	}
-
+	public CategoryDeposit getCategoryDep() {
+		return this.categoryDeposit;
+	}
+	
+	public void setCategoryDep(CategoryDeposit categoryDeposit) {
+		this.categoryDeposit = categoryDeposit;
+	}
 }
