@@ -2,7 +2,6 @@ package piotdav.implement;
 
 import java.util.List;
 
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -26,6 +25,7 @@ public class UserService implements IUserService {
 
 	@Override
 	public boolean addUser(User a) {
+	
 		em.persist(a);
 
 		return true;
@@ -46,12 +46,28 @@ public class UserService implements IUserService {
 
 
 
+	@Override
+	public boolean deleteUser(int  iduser) {
+	
+		em.remove(em.find(User.class, iduser));
 
+			return true;
+
+		
+	}
+
+	@Override
+	public boolean updateUser(int  iduser) {
+		User u =em.find(User.class,iduser);
+		u.setLieuNaissance("tunis");
+		em.persist(u);
+		return true;
+	}
 
 	@Override
 	public User login(String login, String password) {
 		try {
-			Query query = em.createQuery("select e from User e where (e.cin=:l or e.email=:l) and e.motDePasse=:p");
+			Query query = em.createQuery("select e from User e where (e.login=:l or e.email=:l) and e.password=:p");
 			query.setParameter("l", login).setParameter("p", password);
 			return (User) query.getSingleResult();
 		} catch (Exception e) {
@@ -63,9 +79,11 @@ public class UserService implements IUserService {
 
 	@Override
 	public List<User> getAllUser() {
-		Query query = em.createQuery("select e from User e");
-		return query.getResultList();
+		List<User> users = em.createQuery("select u from User u",User.class).getResultList();
+		return users;
+
+		}
 	}
 	
 
-}
+
