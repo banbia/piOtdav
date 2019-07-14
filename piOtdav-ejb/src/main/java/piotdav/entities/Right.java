@@ -8,6 +8,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -21,6 +23,7 @@ import javax.validation.constraints.Null;
 @Table(name = "right", catalog = "pi_otdav")
 public class Right implements java.io.Serializable {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "idRight", unique = true, nullable = false)
 	private int idRight;
 	private String libele;
@@ -41,7 +44,15 @@ public class Right implements java.io.Serializable {
 		this.libele = libele;
 		this.description = description;
 	}
-	
+	public Right(int idRight,String reference) {
+		this.idRight = idRight;
+		this.reference = reference;
+	}
+	public Right(int idRight,String libele,String description) {
+		this.idRight = idRight;
+		this.libele = libele;
+		this.description = description;
+	}
 	public int getIdRight() {
 		return this.idRight;
 	}

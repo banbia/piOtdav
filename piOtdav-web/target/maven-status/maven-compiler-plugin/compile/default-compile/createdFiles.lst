@@ -1,4 +1,8 @@
 otdav\resources\RightRestServices.class
+<<<<<<< HEAD
 otdav\utils\RestActivator.class
 otdav\resources\CategoryRestServices.class
 otdav\resources\WorkRestServices.class
+=======
+otdav\resources\NotificationRestServices.class
+>>>>>>> a54cbb737cd789d71219446139a57902cef8a157
