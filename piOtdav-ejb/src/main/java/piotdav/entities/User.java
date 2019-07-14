@@ -97,12 +97,53 @@ public class User implements java.io.Serializable {
 	@OneToMany(mappedBy = "user")
 	private Set<Resignation> resignations;
 	
+
 	public User() {
 	}
 
 	public User(int idUser) {
 		this.idUser = idUser;
 	}
+
+	public User(int idUser, Resignation resignation, String lastName, String firstName, String cin, Date dateDelivrance,
+			String adresse, String ville, String codePostal, String civilite, String email, Date dateNaissance,
+			Integer identifiantUnique, String lieuNaissance, String nationalite, String raisonSocial, Integer numChild,
+			Integer numEnregistrements, String photo, String fax, String tel, String rib, String sexe, Date etatcivil,
+			Date dateEnregistrement, Integer typeEnregistrement, Integer typePerson, String login, String password,
+			Integer role, Integer state) {
+		this.idUser = idUser;
+		this.resignation = resignation;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.cin = cin;
+		this.dateDelivrance = dateDelivrance;
+		this.adresse = adresse;
+		this.ville = ville;
+		this.codePostal = codePostal;
+		this.civilite = civilite;
+		this.email = email;
+		this.dateNaissance = dateNaissance;
+		this.identifiantUnique = identifiantUnique;
+		this.lieuNaissance = lieuNaissance;
+		this.nationalite = nationalite;
+		this.raisonSocial = raisonSocial;
+		this.numChild = numChild;
+		this.numEnregistrements = numEnregistrements;
+		this.photo = photo;
+		this.fax = fax;
+		this.tel = tel;
+		this.rib = rib;
+		this.sexe = sexe;
+		this.etatcivil = etatcivil;
+		this.dateEnregistrement = dateEnregistrement;
+		this.typeEnregistrement = typeEnregistrement;
+		this.typePerson = typePerson;
+		this.login = login;
+		this.password = password;
+		this.role = role;
+		this.state = state;
+	}
+
 
 	public User( String lastName, String firstName, String cin, Date dateDelivrance,
 			String adresse, String ville, String codePostal, String civilite, String email, Date dateNaissance,

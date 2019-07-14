@@ -31,7 +31,7 @@ public class Work implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private int idWork;
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "user", nullable = true)
 	private User user;
 	private String titre;
