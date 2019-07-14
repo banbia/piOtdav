@@ -1,23 +1,14 @@
 package piotdav.entities;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Null;
 
 @Entity
 @Table(name = "right", catalog = "pi_otdav")
@@ -29,7 +20,7 @@ public class Right implements java.io.Serializable {
 	private String libele;
 	private String reference;
 	private String description;
-	@ManyToMany(fetch = FetchType.LAZY,mappedBy="rights")
+	@ManyToMany(mappedBy="rights")
 	private List<Work> works ;
 	public Right() {
 	}
@@ -43,13 +34,6 @@ public class Right implements java.io.Serializable {
 		this.reference = reference;
 		this.libele = libele;
 		this.description = description;
-	}
-	public Right(int idRight,String reference, String libele,String description,List<Work> works) {
-		this.idRight = idRight;
-		this.reference = reference;
-		this.libele = libele;
-		this.description = description;
-		this.works = works;
 	}
 	public Right(int idRight,String reference) {
 		this.idRight = idRight;
